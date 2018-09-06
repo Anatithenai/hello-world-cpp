@@ -6,9 +6,11 @@ private:
 	std::string greeting = "";
 
 public:
-	void setName(std::string name);
-	std::string getName();
-	void setGreeting(std::string greeting);
-	std::string getGreeting();
+	HelloWorldVO();
+	HelloWorldVO(std::string name, std::string greeting);
+	HelloWorldVO(const HelloWorldVO& anotherHelloWorldVO);
+	~HelloWorldVO();
+	std::string getName() const;
+	std::string getGreeting() const;
 	void print();
 };

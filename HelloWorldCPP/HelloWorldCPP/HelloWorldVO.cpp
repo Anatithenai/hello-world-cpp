@@ -5,20 +5,34 @@
 const std::string NO_NAME_SET = "No name set";
 const std::string NO_GREETING_SET = "no greeting set.";
 
-void HelloWorldVO::setName(std::string name)
+HelloWorldVO::HelloWorldVO()
+{
+	this->name = "";
+	this->greeting = "";
+}
+
+HelloWorldVO::HelloWorldVO(std::string name, std::string greeting)
 {
 	this->name = name;
-}
-
-std::string HelloWorldVO::getName() {
-	return this->name;
-}
-
-void HelloWorldVO::setGreeting(std::string greeting) {
 	this->greeting = greeting;
 }
 
-std::string HelloWorldVO::getGreeting() {
+HelloWorldVO::HelloWorldVO(const HelloWorldVO & anotherHelloWorldVO)
+{
+	this->name = anotherHelloWorldVO.getName();
+	this->greeting = anotherHelloWorldVO.getGreeting();
+}
+
+HelloWorldVO::~HelloWorldVO()
+{
+	
+}
+
+std::string HelloWorldVO::getName() const {
+	return this->name;
+}
+
+std::string HelloWorldVO::getGreeting() const {
 	return this->greeting;
 }
 
